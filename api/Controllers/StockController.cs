@@ -40,9 +40,10 @@ namespace api.Controllers
             var stockModel = stockDto.ToStockFromCreateDto();
             _context.Stock.Add(stockModel);
             _context.SaveChanges();
+            //return Ok(stockModel.ToStockDto());
             return CreatedAtAction(nameof(GetById), new{id=stockModel.Id}, stockModel.ToStockDto());
         }
-        
+
         [HttpPut]
         [Route("{id}")]
         public IActionResult Update([FromRoute] int id,[FromBody] UpdateStockRequestDto updateDto){
@@ -62,5 +63,17 @@ namespace api.Controllers
             return Ok(stockModel.ToStockDto());
         }
 
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete([FromRoute] int id){
+            var stockModel = _context.Stock.FirstOrDefault(x => x.Id==id);
+            if(stockModel == null){
+                return NotFound();
+            }
+            _context.Stock.Remove(stockModel);
+            _context.SaveChanges();
+            return NoContent();
+
+        }
     }
 }
