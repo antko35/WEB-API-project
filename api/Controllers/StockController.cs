@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Stock;
+using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -24,11 +25,11 @@ namespace api.Controllers
             _context=context;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll(){
+        public async Task<IActionResult> GetAll([FromQuery] QueryObject query){
              if(!ModelState.IsValid){
                 return BadRequest(ModelState);
             }
-            var stocks=await _stockRepo.GetAllAsync();
+            var stocks=await _stockRepo.GetAllAsync(query);
             var stockDto = stocks.Select(s => s.ToStockDto());// Преобразование каждого объекта Stock в объект StockDto
             return Ok(stocks);
         }
