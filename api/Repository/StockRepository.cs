@@ -53,7 +53,8 @@ namespace api.Repository
                     stocks = query.IsDecsending ? stocks.OrderByDescending(s => s.Symbol) : stocks.OrderBy(s => s.Symbol);
                 }
             }
-            return await stocks.ToListAsync();
+            var skipNumder = (query.PageNumber - 1) * query.PageSize;
+            return await stocks.Skip(skipNumder).Take(query.PageSize).ToListAsync();
         }
 
         public async Task<Stock?> GetByIdAsync(int id)
