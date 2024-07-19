@@ -41,11 +41,17 @@ namespace api.Repository
         public async Task<List<Stock>> GetAllAsync(QueryObject query)
         {
             var stocks =  _context.Stock.Include(c => c.Comments).AsQueryable();
+
             if(!string.IsNullOrWhiteSpace(query.CompanyName)){
                 stocks= stocks.Where(s=> s.CompanyName.Contains(query.CompanyName));
             }
             if(!string.IsNullOrWhiteSpace(query.Symbol)){
                 stocks=stocks.Where(s=> s.Symbol.Contains(query.Symbol));
+            }
+            if(!string.IsNullOrWhiteSpace(query.SortBy)){
+                if(query.SortBy.Equals("Symbol",StringComparison.OrdinalIgnoreCase)){
+                    stocks = query.IsDecsending ? stocks.OrderByDescending(s => s.Symbol) : stocks.OrderBy(s => s.Symbol);
+                }
             }
             return await stocks.ToListAsync();
         }
