@@ -30,11 +30,11 @@ namespace api.Service
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor{
-                Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(7),
-                SigningCredentials = creds,
-                Issuer = _config["JWT:Issuer"],
-                Audience = _config["JWT:Audience"]
+                Subject = new ClaimsIdentity(claims), //тема токена
+                Expires = DateTime.Now.AddDays(7), //время жизни токена
+                SigningCredentials = creds, //
+                Issuer = _config["JWT:Issuer"], // издатель токена
+                Audience = _config["JWT:Audience"] //получатель токена
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
