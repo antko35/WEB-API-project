@@ -32,8 +32,8 @@ namespace api.Controllers
                 return BadRequest(ModelState);
             }
             var stocks=await _stockRepo.GetAllAsync(query);
-            var stockDto = stocks.Select(s => s.ToStockDto());// Преобразование каждого объекта Stock в объект StockDto
-            return Ok(stocks);
+            var stockDto = stocks.Select(s => s.ToStockDto()).ToList();// Преобразование каждого объекта Stock в объект StockDto
+            return Ok(stockDto);
         }
 
         [HttpGet("{id:int}")]
