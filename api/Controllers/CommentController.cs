@@ -77,7 +77,7 @@ namespace api.Controllers
             if(comment==null){
                 return NotFound("Comment not found");
             }
-            return Ok(comment.ToCommentDto());
+            return Ok(comment);
         }
         [HttpDelete]
         [Route("{id:int}")]
