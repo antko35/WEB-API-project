@@ -1,16 +1,14 @@
-import React, { SyntheticEvent } from 'react'
-import DeletePortfolio from '../../DeletePortfolio/DeletePortfolio';
+import React from 'react'
 
 interface Props {
     portfolioValue : string;
-    onPortfolioDelete : (e: SyntheticEvent) => void;
 }
 
-const CardPortfolio = ({portfolioValue, onPortfolioDelete}: Props) => {
+const CardPortfolio = ({portfolioValue}: Props) => {
   return (
     <>
         <h4>{portfolioValue}</h4>
-        <DeletePortfolio onPortfolioDelete={onPortfolioDelete} portfolioValue={portfolioValue} />
+        <button>x</button>
     </>
   )
 }

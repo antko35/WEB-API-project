@@ -30,14 +30,6 @@ function App() {
       setPortfolioValues(updatedPortfolio);
     }
 
-    const onPortfolioDelete = (e : any) => {
-      e.preventDefault();
-      const removed  = portfolioValues.filter((value) => {
-        return value !== e.target[0].value;
-      })
-      setPortfolioValues(removed);
-    }
-
     const onSearchSubmit = async (e : SyntheticEvent)=>{
       e.preventDefault();
       const result = await searchCompanies(search);
@@ -53,7 +45,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Search onSearchSubmit={onSearchSubmit} search={search} handleSearchChange={handleSearchChange} />
-      <ListPortfolio portfolioValues={portfolioValues}  onPortfolioDelete={onPortfolioDelete} />
+      <ListPortfolio portfolioValues={portfolioValues} />
       {serverError && <h1>{serverError}</h1>}
       <CardList 
         searchResult={searchResult} 
