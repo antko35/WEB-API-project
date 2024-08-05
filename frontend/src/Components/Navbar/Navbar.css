@@ -29,8 +29,8 @@
   }
   
   .dashboard-link {
-    display: none; 
-  } 
+    display: none; /* Hide by default */
+  }
   
   .dashboard-text {
     font-weight: bold;
