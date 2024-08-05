@@ -9,10 +9,12 @@ import { Server } from 'http';
 import AddPortfolio from './Components/Portfolio/AddPortfolio/AddPortfolio';
 import { ListFormat } from 'typescript';
 import ListPortfolio from './Components/Portfolio/ListPortfolio/ListPortfolio';
+import Navbar from './Components/Navbar/Navbar';
+import Hero from './Components/Hero/Hero';
 
 function App() {
   const[search,setSearch] = useState<string>("");
-  const [portfolioValues,setPortfolioValues] = useState<string[]>([]);
+  const[portfolioValues,setPortfolioValues] = useState<string[]>([]);
   const[searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const[serverError, setServerError] = useState<string | null>(null);
 
@@ -52,6 +54,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
+      {/* <Hero /> */}
       <Search onSearchSubmit={onSearchSubmit} search={search} handleSearchChange={handleSearchChange} />
       <ListPortfolio portfolioValues={portfolioValues} onPortfolioDelete={onPortfolioDelete} />
       {serverError && <h1>{serverError}</h1>}

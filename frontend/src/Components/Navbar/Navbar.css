@@ -1,0 +1,78 @@
+/* Container for the navigation */
+.navbar {
+    position: relative;
+    padding: 1.5rem; /* Adjust as needed */
+  }
+  
+  /* Center and space out the contents */
+  .container {
+    max-width: 1200px; /* Adjust based on your design */
+    margin: 0 auto;
+  }
+  
+  /* Flexbox to align items */
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Flexbox for logo and dashboard link */
+  .logo-and-links {
+    display: flex;
+    align-items: center;
+    gap: 5rem; /* Adjust spacing as needed */
+  }
+  
+  .logo {
+    /* Add styles for your logo if needed */
+  }
+  
+  .dashboard-link {
+    display: none; /* Hide by default */
+  }
+  
+  .dashboard-text {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .dashboard-text:hover {
+    color: darkblue;
+  }
+  
+  /* Auth links container */
+  .auth-links {
+    display: none; /* Hide by default */
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Adjust spacing as needed */
+    color: black;
+  }
+  
+  .login-text:hover {
+    color: darkblue;
+  }
+  
+  .signup-button {
+    padding: 0.75rem 2rem; /* Adjust padding as needed */
+    font-weight: bold;
+    border-radius: 0.25rem;
+    color: white;
+    background-color: lightgreen;
+    text-decoration: none;
+  }
+  
+  .signup-button:hover {
+    opacity: 0.7;
+  }
+  
+  /* Media query for larger screens */
+  @media (min-width: 1024px) {
+    .dashboard-link,
+    .auth-links {
+      display: flex;
+    }
+  }
+  

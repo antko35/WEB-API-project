@@ -1,0 +1,41 @@
+/* flex flex-col items-center justify-between w-full p-6 bg-slate-100 rounded-lg md:flex-row */
+.card{
+    display: flex; /* Эквивалент flex */
+    flex-direction:row; /* Эквивалент flex-col */
+    align-items: center; /* Эквивалент items-center */
+    justify-content: space-between; /* Эквивалент justify-between */
+    width: auto; /*Эквивалент w-full */
+    height: auto;
+    padding: 1.5rem; /* Эквивалент p-6 (1.5rem = 24px) */
+    background-color: #f1f5f9; /* Эквивалент bg-slate-100 (цвет может быть другим, это светло-серый) */
+    border-radius: 0.5rem; /* Эквивалент rounded-lg (0.5rem = 8px) */
+  }
+ @media (min-width: 768px) {
+    .custom-container {
+      flex-direction: row; /* Эквивалент md:flex-row */
+      /* Здесь можно добавить дополнительные стили для md-экранов, если необходимо */
+    }
+  }  
+  
+  /* font-bold text-center text-veryDarkViolet md:text-left */
+.text{
+     font-weight:bold; 
+    text-align: center;
+    color: black;
+  }
+  @media (min-width: 768px) {
+    .custom-text {
+      text-align: left; /* Эквивалент md:text-left */
+    }
+  }
+
+  /* text-veryDarkBlue */
+  .currency{
+color: black;
+  }
+
+  /* font-bold text-veryDarkBlue */
+.short-name{
+    font-weight: bold;
+    color: black;
+}

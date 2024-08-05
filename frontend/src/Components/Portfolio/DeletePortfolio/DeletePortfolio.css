@@ -1,0 +1,16 @@
+.custom-button {
+    display: block;
+    width: 100%;
+    padding-top: 0.75rem; /* 12px */
+    padding-bottom: 0.75rem; /* 12px */
+    color: white;
+    background-color: #f56565; /* Tailwind's bg-red-500 */
+    border: 2px solid #f56565; /* Tailwind's border-red-500 */
+    border-radius: 0.5rem; /* 8px, Tailwind's rounded-lg */
+    transition: color 0.2s, background-color 0.2s; /* duration-200 */
+  }
+  
+  .custom-button:hover {
+    color: #f56565; /* Tailwind's text-red-500 */
+    background-color: white;
+  }

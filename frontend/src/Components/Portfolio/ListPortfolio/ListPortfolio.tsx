@@ -1,5 +1,6 @@
 import React, { SyntheticEvent } from 'react'
 import CardPortfolio from '../CardPortfolio/CardPortfolio'
+import './ListPortfolio.css'
 
 interface Props {
     portfolioValues : string[]
@@ -8,16 +9,27 @@ interface Props {
 
 const ListPortfolio = ({portfolioValues, onPortfolioDelete}: Props) => {
   return (
-    <>
-        <h3>My portfolio</h3>
-        <ul>
-            {portfolioValues &&
-                portfolioValues.map( (portfolioValue) =>{
-                    return <CardPortfolio portfolioValue={portfolioValue} onPortfolioDelete={onPortfolioDelete} />
-                })
-                }
-        </ul>
-    </>
+    <section id="portfolio">
+  <h2 className="portfolio-title">
+    My Portfolio
+  </h2>
+  <div className="portfolio-container">
+    {portfolioValues.length > 0 ? (
+      portfolioValues.map((portfolioValue) => (
+        <CardPortfolio
+          // key={portfolioValue.id}  // Assuming each portfolioValue has a unique id
+          portfolioValue={portfolioValue}
+          onPortfolioDelete={onPortfolioDelete}
+        />
+      ))
+    ) : (
+      <h3 className="portfolio-empty-message">
+        Your portfolio is empty.
+      </h3>
+    )}
+  </div>
+</section>
+
   )
 }
 

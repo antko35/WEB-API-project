@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from 'react';
 import DeletePortfolio from '../DeletePortfolio/DeletePortfolio';
-
+import './CardPortfolio.css'
 interface Props {
     portfolioValue : string;
     onPortfolioDelete : (e : SyntheticEvent) => void;
@@ -8,10 +8,13 @@ interface Props {
 
 const CardPortfolio = ({portfolioValue, onPortfolioDelete}: Props) => {
   return (
-    <>
-        <h4>{portfolioValue}</h4>
-        <DeletePortfolio onPortfolioDelete={onPortfolioDelete} portfolioValue={portfolioValue} />
-    </>
+    <div className="card-container">
+    <p className="port-value">{portfolioValue}</p>
+    <DeletePortfolio
+      portfolioValue={portfolioValue}
+      onPortfolioDelete={onPortfolioDelete}
+    />
+    </div>
   )
 }
 

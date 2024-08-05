@@ -1,0 +1,61 @@
+#portfolio {
+    margin-bottom: 1.25rem; /* 20px */
+  }
+  
+  .portfolio-title {
+    margin-bottom: 0.75rem; /* 12px */
+    margin-top: 0.75rem; /* 12px */
+    font-size: 1.875rem; /* 30px */
+    font-weight: 600; /* Semibold */
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .portfolio-title {
+      font-size: 2.25rem; /* 36px */
+    }
+  }
+  
+  .portfolio-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80rem; /* 1280px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem; /* 40px */
+    padding-right: 2.5rem; /* 40px */
+    gap: 2.5rem; /* 40px */
+  }
+  
+  @media (min-width: 768px) {
+    .portfolio-container {
+      padding-left: 1.5rem; /* 24px */
+      padding-right: 1.5rem; /* 24px */
+      flex-direction: row;
+      gap: 1.75rem; /* 28px */
+    }
+  }
+  
+  .portfolio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* 40px */
+  }
+  
+  @media (min-width: 768px) {
+    .portfolio-content {
+      flex-direction: row;
+      gap: 1.75rem; /* 28px */
+    }
+  }
+  
+  .portfolio-empty-message {
+    margin-bottom: 0.75rem; /* 12px */
+    margin-top: 0.75rem; /* 12px */
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600; /* Semibold */
+    text-align: center;
+  }
+  

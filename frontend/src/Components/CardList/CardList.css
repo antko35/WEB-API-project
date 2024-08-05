@@ -1,0 +1,16 @@
+/* Общие стили для элемента */
+.custom-text {
+    margin-bottom: 0.75rem; /* Эквивалент mb-3 */
+    margin-top: 0.75rem; /* Эквивалент mt-3 */
+    font-size: 1.25rem; /* Эквивалент text-xl */
+    font-weight: 600; /* Эквивалент font-semibold (600 = semibold) */
+    text-align: center; /* Эквивалент text-center */
+  }
+  
+  /* Стили для экранов среднего размера и больше */
+  @media (min-width: 768px) {
+    .custom-text {
+      font-size: 1.25rem; /* Эквивалент md:text-xl, хотя этот размер уже указан выше */
+    }
+  }
+  
