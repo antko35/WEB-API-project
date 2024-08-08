@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from "./logo.png";
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 interface Props {}
 
@@ -10,9 +11,13 @@ const Navbar = (props: Props) => {
     <div className="container">
       <div className="navbar-content">
         <div className="logo-and-links">
-          <img src={logo} alt="Logo" className="logo" />
+          <Link to="/">
+            <img src={logo} alt="Logo" className="logo" />
+          </Link>
           <div className="dashboard-link">
-            <a href="#" className="dashboard-text">Dashboard</a>
+            <Link to="/search" className="dashboard-text">
+              Search
+            </Link>
           </div>
         </div>
         <div className="auth-links">

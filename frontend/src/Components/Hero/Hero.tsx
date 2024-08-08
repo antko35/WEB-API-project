@@ -1,6 +1,7 @@
 import React from 'react';
 import hero from "./hero.png";
 import './Hero.css'
+import { Link } from 'react-router-dom';
 interface Props {}
 
 const Hero = (props: Props) => {
@@ -14,7 +15,7 @@ const Hero = (props: Props) => {
         news.
       </p>
       <div className="hero-button-container">
-        <a href="#" className="hero-button">Get Started</a>
+        <Link to="/search" className="hero-button">Get Started</Link>
       </div>
     </div>
     <div className="hero-image">
