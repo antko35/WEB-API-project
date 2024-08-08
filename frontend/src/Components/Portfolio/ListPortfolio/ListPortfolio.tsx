@@ -17,7 +17,7 @@ const ListPortfolio = ({portfolioValues, onPortfolioDelete}: Props) => {
     {portfolioValues.length > 0 ? (
       portfolioValues.map((portfolioValue) => (
         <CardPortfolio
-          // key={portfolioValue.id}  // Assuming each portfolioValue has a unique id
+          key={portfolioValue}  // Assuming each portfolioValue has a unique id
           portfolioValue={portfolioValue}
           onPortfolioDelete={onPortfolioDelete}
         />
