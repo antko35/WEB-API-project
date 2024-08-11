@@ -1,0 +1,42 @@
+.header {
+    padding-top: 80px;
+    padding-bottom: 128px;
+    background-color: #fbfbfb;
+  }
+
+  .header-content {
+    padding: 0 24px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    width: 100%;
+    max-width: 25%;
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+
+  .stat-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+
+  .stat-content h5 {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }

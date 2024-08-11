@@ -1,0 +1,15 @@
+.container-comp {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+  }
+
+ 
+  .main-content {
+    margin-left: 16rem;
+    width: 100%;
+    background-color: #f8fafc;
+  }
+
+  

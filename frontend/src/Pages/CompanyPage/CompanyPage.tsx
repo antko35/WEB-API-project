@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { CompanyProfile } from '../../company';
 import { GetCompanyProfile } from '../../api';
+import "./CompanyPage.css"
+import Sidebar from '../../Components/Sidebar/Sidebar';
+import CompanyDashbord from '../../Components/CompanyDashboard/CompanyDashbord';
 
 interface Props {}
 
@@ -19,7 +22,13 @@ const CompanyPage = (props: Props) => {
   return (
     <>
     {company ? (
-      <div>{company.companyName}</div>
+     <div className="container-comp">
+      
+     <div className="main-content">
+        <Sidebar />  
+        <CompanyDashbord />
+     </div>
+   </div>
      ) : (
       <div>
         Company not found
